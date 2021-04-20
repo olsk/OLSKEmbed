@@ -1,5 +1,9 @@
 const mod = {
 
+	_OLSKEmbedCanonicalURL () {
+		return 'https://youtube.com/watch?v=oUFJJNQGwhk';
+	},
+
 	_OLSKEmbedPatterns () {
 		// https://github.com/oscarotero/Embed/blob/master/src/resources/oembed.php
 		return {
