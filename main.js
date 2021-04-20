@@ -966,7 +966,7 @@ const mod = {
 		};
 	},
 
-	OLSKEmbedURL (inputData) {
+	OLSKEmbedEndpointURL (inputData) {
 		if (typeof inputData !== 'string') {
 			throw new Error('OLSKErrorInputNotValid');
 		}
@@ -978,6 +978,6 @@ const mod = {
 		}).shift() || []).shift();
 	},
 
-	};
+};
 
-	Object.assign(exports, mod);
+Object.assign(exports, mod);
