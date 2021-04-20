@@ -68,7 +68,7 @@ describe('OLSKEmbedFetchURL', function test_OLSKEmbedFetchURL () {
 	it('url encodes param2', function () {
 		const param1 = Math.random().toString();
 		const param2 = 'https://example.com?alfa=bravo';
-		deepEqual(mod.OLSKEmbedFetchURL(param1, param2), param1 + '?url=' + encodeURIComponent(param1));
+		deepEqual(mod.OLSKEmbedFetchURL(param1, param2), param1 + '?url=' + encodeURIComponent(param2));
 	});
 
 });

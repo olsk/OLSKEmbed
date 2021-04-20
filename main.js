@@ -991,7 +991,7 @@ const mod = {
 			throw new Error('OLSKErrorInputNotValid');
 		}
 
-		return param1 + '?url=' + encodeURIComponent(param1)
+		return param1 + '?url=' + encodeURIComponent(param2)
 	},
 
 };
