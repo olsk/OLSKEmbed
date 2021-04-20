@@ -978,6 +978,18 @@ const mod = {
 		}).shift() || []).shift();
 	},
 
+	OLSKEmbedFetchURL (param1, param2) {
+		if (typeof param1 !== 'string') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		if (typeof param2 !== 'string') {
+			throw new Error('OLSKErrorInputNotValid');
+		}
+
+		return param1 + '?url=' + encodeURIComponent(param1)
+	},
+
 };
 
 Object.assign(exports, mod);

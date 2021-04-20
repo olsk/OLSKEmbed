@@ -46,3 +46,29 @@ describe('OLSKEmbedEndpointURL', function test_OLSKEmbedEndpointURL () {
 	});
 
 });
+
+describe('OLSKEmbedFetchURL', function test_OLSKEmbedFetchURL () {
+
+	it('throws if param1 not string', function () {
+		throws(function () {
+			mod.OLSKEmbedFetchURL(null, '');
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	it('throws if param2 not string', function () {
+		throws(function () {
+			mod.OLSKEmbedFetchURL('', null);
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	it('returns string', function () {
+		deepEqual(mod.OLSKEmbedFetchURL('', ''), '?url=');
+	});
+
+	it('url encodes param2', function () {
+		const param1 = Math.random().toString();
+		const param2 = 'https://example.com?alfa=bravo';
+		deepEqual(mod.OLSKEmbedFetchURL(param1, param2), param1 + '?url=' + encodeURIComponent(param1));
+	});
+
+});
