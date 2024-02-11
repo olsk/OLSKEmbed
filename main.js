@@ -973,6 +973,10 @@
 					'https?://imgur\\.com/.*',
 					'https?://i\\.imgur\\.com/.*',
 				],
+
+				'https://bandcamp.com/oembed': [
+					'https?://(.*\\.)?bandcamp\\.com/.*',
+				],
 			};
 		},
 
