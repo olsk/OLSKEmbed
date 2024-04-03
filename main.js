@@ -1017,7 +1017,7 @@
 
 			if (inputData.provider_name === 'YouTube') {
 				inputData.OLSKEmbedFrameURL = inputData.OLSKEmbedFrameURL.replace('youtube.com', 'youtube-nocookie.com');
-				inputData.OLSKEmbedHeight = 250;
+				inputData.OLSKEmbedHeight = 200;
 			}
 
 			return inputData;

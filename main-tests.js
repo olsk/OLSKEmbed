@@ -108,7 +108,7 @@ describe('OLSKEmbedGenerateProperties', function test_OLSKEmbedGeneratePropertie
 				html: `<iframe width="200" height="113" src="${ Math.random().toString() }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="${ Math.random().toString() }"></iframe>`,
 
 			};
-			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedHeight, 250);
+			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedHeight, 200);
 		});
 	
 	});
