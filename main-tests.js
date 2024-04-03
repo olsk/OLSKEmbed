@@ -73,13 +73,13 @@ describe('OLSKEmbedFetchURL', function test_OLSKEmbedFetchURL () {
 
 });
 
-describe('OLSKEmbedGenerateFrameURL', function test_OLSKEmbedGenerateFrameURL () {
+describe('OLSKEmbedGenerateProperties', function test_OLSKEmbedGenerateProperties () {
 
 	it('returns input', function () {
 		const item = {
 			html: Math.random().toString(),
 		};
-		deepEqual(mod.OLSKEmbedGenerateFrameURL(item), item);
+		deepEqual(mod.OLSKEmbedGenerateProperties(item), item);
 	});
 
 	it('sets OLSKEmbedFrameURL', function () {
@@ -87,7 +87,7 @@ describe('OLSKEmbedGenerateFrameURL', function test_OLSKEmbedGenerateFrameURL ()
 		const item = {
 			html: `<iframe width="200" height="113" src="${ url }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="${ Math.random().toString() }"></iframe>`,
 		};
-		deepEqual(mod.OLSKEmbedGenerateFrameURL(item).OLSKEmbedFrameURL, url);
+		deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedFrameURL, url);
 	});
 
 	context('YouTube', function () {
@@ -99,7 +99,16 @@ describe('OLSKEmbedGenerateFrameURL', function test_OLSKEmbedGenerateFrameURL ()
 				provider_name: 'YouTube',
 				html: `<iframe width="200" height="113" src="${ url }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="${ Math.random().toString() }"></iframe>`,
 			};
-			deepEqual(mod.OLSKEmbedGenerateFrameURL(item).OLSKEmbedFrameURL, url.replace('youtube.com', 'youtube-nocookie.com'));
+			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedFrameURL, url.replace('youtube.com', 'youtube-nocookie.com'));
+		});
+
+		it('sets OLSKEmbedHeight', function () {
+			const item = {
+				provider_name: 'YouTube',
+				html: `<iframe width="200" height="113" src="${ Math.random().toString() }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="${ Math.random().toString() }"></iframe>`,
+
+			};
+			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedHeight, 250);
 		});
 	
 	});
@@ -112,7 +121,16 @@ describe('OLSKEmbedGenerateFrameURL', function test_OLSKEmbedGenerateFrameURL ()
 				embed_product_id: Math.random().toString(),
 				html: Math.random().toString(),
 			};
-			deepEqual(mod.OLSKEmbedGenerateFrameURL(item).OLSKEmbedFrameURL, 'https://www.tiktok.com/embed/v2/' + item.embed_product_id);
+			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedFrameURL, 'https://www.tiktok.com/embed/v2/' + item.embed_product_id);
+		});
+		
+		it('sets OLSKEmbedHeight', function () {
+			const item = {
+				provider_name: 'TikTok',
+				embed_product_id: Math.random().toString(),
+				html: Math.random().toString(),
+			};
+			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedHeight, 500);
 		});
 	
 	});

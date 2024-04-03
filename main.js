@@ -1004,7 +1004,7 @@
 			return param1 + '?url=' + encodeURIComponent(param2)
 		},
 
-		OLSKEmbedGenerateFrameURL (inputData) {
+		OLSKEmbedGenerateProperties (inputData) {
 			const match = inputData.html.match(/src=\u0022(\S*)\u0022/);
 			if (match) {
 				inputData.OLSKEmbedFrameURL = match[1];
@@ -1012,10 +1012,12 @@
 
 			if (inputData.provider_name === 'TikTok') {
 				inputData.OLSKEmbedFrameURL = 'https://www.tiktok.com/embed/v2/' + inputData.embed_product_id;
+				inputData.OLSKEmbedHeight = 500;
 			}
 
 			if (inputData.provider_name === 'YouTube') {
 				inputData.OLSKEmbedFrameURL = inputData.OLSKEmbedFrameURL.replace('youtube.com', 'youtube-nocookie.com');
+				inputData.OLSKEmbedHeight = 250;
 			}
 
 			return inputData;
