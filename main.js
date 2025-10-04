@@ -943,6 +943,7 @@
 				'https://www.youtube.com/oembed': [
 					'https?://(.*\\.)?youtube\\.com/watch.*',
 					'https?://(.*\\.)?youtube\\.com/v/.*',
+					'https?://(.*\\.)?youtube\\.com/shorts/.*',
 					'https?://youtu\\.be/.*',
 					'https?://(.*\\.)?youtube\\.com/playlist\\?.*',
 				],
