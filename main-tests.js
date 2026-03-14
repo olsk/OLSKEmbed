@@ -40,7 +40,7 @@ describe('OLSKEmbedEndpointURL', function test_OLSKEmbedEndpointURL () {
 	});
 
 	it('matches instagram', function () {
-		deepEqual(mod.OLSKEmbedEndpointURL('https://www.instagram.com/p/CN4V2ksHAyE/'), Object.keys(mod._OLSKEmbedPatterns()).filter(function (e) {
+		deepEqual(mod.OLSKEmbedEndpointURL('https://www.instagram.com/reel/DVjh9K1AWWw/'), Object.keys(mod._OLSKEmbedPatterns()).filter(function (e) {
 			return e.match('instagram');
 		}).shift());
 	});

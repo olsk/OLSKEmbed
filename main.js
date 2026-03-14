@@ -381,6 +381,7 @@
 				'https://api.instagram.com/oembed': [
 					'https?://instagram\\.com/.*/p/.*',
 					'https?://(www\\.)?instagram\\.com/.*/p/.*',
+					'https?://(www\\.)?instagram\\.com/reel/.*',
 					'https?://instagram\\.com/p/.*',
 					'https?://instagr\\.am/p/.*',
 					'https?://(www\\.)?instagram\\.com/p/.*',
