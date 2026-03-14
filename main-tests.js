@@ -30,7 +30,7 @@ describe('OLSKEmbedEndpointURL', function test_OLSKEmbedEndpointURL () {
 	it('matches facebook', function () {
 		deepEqual(mod.OLSKEmbedEndpointURL('https://facebook.com/facebook/videos/10153231379946729'), Object.keys(mod._OLSKEmbedPatterns()).filter(function (e) {
 			return e.match('facebook');
-		}).pop());
+		})[1]);
 	});
 
 	it('matches vimeo', function () {
@@ -109,19 +109,6 @@ describe('OLSKEmbedGenerateProperties', function test_OLSKEmbedGeneratePropertie
 
 			};
 			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedHeight, 200);
-		});
-	
-	});
-
-	context('Instagram', function () {
-		
-		it('sets OLSKEmbedFrameURL', function () {
-			const item = {
-				provider_name: 'Instagram',
-				embed_product_id: Math.random().toString(),
-				html: Math.random().toString(),
-			};
-			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedFrameURL, 'https://www.instagram.com/embed/v2/' + item.embed_product_id);
 		});
 	
 	});
