@@ -181,8 +181,8 @@
 					'https?://fav\\.me/.*',
 					'https?://sta\\.sh/.*',
 					'https?://(.*\\.)?deviantart\\.com/.*/art/.*',
-					'https?://sta\\.sh/.*",',
-					'https?://(.*\\.)?deviantart\\.com/.*\\#/d.*"',
+					'https?://sta\\.sh/.*',
+					'https?://(.*\\.)?deviantart\\.com/.*\\#/d.*',
 				],
 				'https://*.didacte.com/cards/oembed\'': [
 					'https?://(.*\\.)?didacte\\.com/a/course/.*',
@@ -379,8 +379,8 @@
 					'https?://(.*\\.)?inphood\\.com/.*',
 				],
 				'https://api.instagram.com/oembed': [
-					'https?://instagram\\.com/.*/p/.*,',
-					'https?://(www\\.)?instagram\\.com/.*/p/.*,',
+					'https?://instagram\\.com/.*/p/.*',
+					'https?://(www\\.)?instagram\\.com/.*/p/.*',
 					'https?://instagram\\.com/p/.*',
 					'https?://instagr\\.am/p/.*',
 					'https?://(www\\.)?instagram\\.com/p/.*',
@@ -661,7 +661,7 @@
 					'https?://rumble\\.com/.*',
 				],
 				'https://embed.runkit.com/oembed': [
-					'https?://embed\\.runkit\\.com/.*,',
+					'https?://embed\\.runkit\\.com/.*',
 				],
 				'http://videos.sapo.pt/oembed': [
 					'https?://videos\\.sapo\\.pt/.*',
