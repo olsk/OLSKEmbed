@@ -378,7 +378,7 @@
 				'http://api.inphood.com/oembed': [
 					'https?://(.*\\.)?inphood\\.com/.*',
 				],
-				'https://api.instagram.com/oembed': [
+				'https://graph.facebook.com/v16.0/instagram_oembed': [
 					'https?://instagram\\.com/.*/p/.*',
 					'https?://(www\\.)?instagram\\.com/.*/p/.*',
 					'https?://(www\\.)?instagram\\.com/reel/.*',
@@ -943,7 +943,7 @@
 				],
 				'https://www.youtube.com/oembed': [
 					'https?://(.*\\.)?youtube\\.com/watch.*',
-					'https?://(.*\\.)?youtube\\.com/v/.*',
+					'https?://(.*\\.)?youtube\\.com/v/.*(\?.*\=.*)?',
 					'https?://(.*\\.)?youtube\\.com/shorts/.*',
 					'https?://youtu\\.be/.*',
 					'https?://(.*\\.)?youtube\\.com/playlist\\?.*',

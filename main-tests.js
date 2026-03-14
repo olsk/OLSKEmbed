@@ -113,6 +113,19 @@ describe('OLSKEmbedGenerateProperties', function test_OLSKEmbedGeneratePropertie
 	
 	});
 
+	context('Instagram', function () {
+		
+		it('sets OLSKEmbedFrameURL', function () {
+			const item = {
+				provider_name: 'Instagram',
+				embed_product_id: Math.random().toString(),
+				html: Math.random().toString(),
+			};
+			deepEqual(mod.OLSKEmbedGenerateProperties(item).OLSKEmbedFrameURL, 'https://www.instagram.com/embed/v2/' + item.embed_product_id);
+		});
+	
+	});
+
 	context('TikTok', function () {
 		
 		it('sets OLSKEmbedFrameURL', function () {
