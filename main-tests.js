@@ -3,6 +3,25 @@ const { throws, deepEqual } = require('assert');
 const mod = require('./main.js');
 import { JSDOM } from 'jsdom';
 
+describe('OLSKEmbedDirect', function test_OLSKEmbedDirect () {
+
+	it('throws if not string', function () {
+		throws(function () {
+			mod.OLSKEmbedDirect(null);
+		}, /OLSKErrorInputNotValid/);
+	});
+
+	it('returns null', function () {
+		deepEqual(mod.OLSKEmbedDirect(''), null);
+	});
+
+	it('matches instagram', function () {
+		const id = Math.random().toString();
+		deepEqual(mod.OLSKEmbedDirect(`https://www.instagram.com/reel/${ id }/`), `https://www.instagram.com/reel/${ id }/embed/captioned/`);
+	});
+
+});
+
 describe('OLSKEmbedEndpointURL', function test_OLSKEmbedEndpointURL () {
 
 	it('throws if not string', function () {

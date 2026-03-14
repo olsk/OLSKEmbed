@@ -10,6 +10,23 @@
 			return 'https://youtube.com/watch?v=oUFJJNQGwhk';
 		},
 
+		OLSKEmbedDirect (inputData) {
+			if (typeof inputData !== 'string') {
+				throw new Error('OLSKErrorInputNotValid');
+			}
+
+			return Object.entries({
+				'https://www.instagram.com/reel/(.*)/': id => `https://www.instagram.com/reel/${ id }/embed/captioned/`,
+			}).map(function ([pattern, callback]) {
+				const match = inputData.match(pattern);
+
+				if (!match)
+					return null;
+
+				return callback(match.pop());
+			}).filter(e => !!e).shift();
+		},
+
 		_OLSKEmbedPatterns () {
 			// https://github.com/oscarotero/Embed/blob/master/src/resources/oembed.php
 			return {
