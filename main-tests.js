@@ -20,6 +20,11 @@ describe('OLSKEmbedDirect', function test_OLSKEmbedDirect () {
 		deepEqual(mod.OLSKEmbedDirect(`https://www.instagram.com/reel/${ id }/`), `https://www.instagram.com/reel/${ id }/embed/captioned/`);
 	});
 
+	it('matches facebook', function () {
+		const id = Math.random().toString();
+		deepEqual(mod.OLSKEmbedDirect(`https://www.facebook.com/reel/${ id }/`), `https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${ id }%2F&show_text=false&width=267&t=0`);
+	});
+
 });
 
 describe('OLSKEmbedEndpointURL', function test_OLSKEmbedEndpointURL () {
